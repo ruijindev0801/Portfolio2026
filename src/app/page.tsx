@@ -13,7 +13,7 @@ import { PublicationList } from "@/components/sections/publications";
 import { Skills } from "@/components/sections/skills";
 import { WritingList } from "@/components/sections/writing";
 import { initials } from "@/lib/format";
-import { info, navItems, SECTIONS, sections, type SectionKey } from "@/lib/info";
+import { info, navItems, SECTIONS, type SectionKey, sections } from "@/lib/info";
 import { personJsonLd } from "@/lib/json-ld";
 
 function SectionContent({ id }: { id: Exclude<SectionKey, "contact"> }) {
@@ -81,6 +81,7 @@ export default function Home() {
       </main>
 
       <Footer name={profile.name} />
+      {/* biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD built from our own data, with "<" escaped (see json-ld.ts) */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: personJsonLd(info) }} />
     </>
   );

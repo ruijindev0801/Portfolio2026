@@ -1,9 +1,10 @@
-"use client"
+"use client";
 
-import React, { useEffect, useId, useRef, useState } from "react"
-import { motion } from "motion/react"
+import { motion } from "motion/react";
+import type React from "react";
+import { useEffect, useId, useRef, useState } from "react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 /**
  *  DotPattern Component Props
@@ -19,16 +20,16 @@ import { cn } from "@/lib/utils"
  * @param {boolean} [glow=false] - Whether dots should have a glowing animation effect
  */
 interface DotPatternProps extends React.SVGProps<SVGSVGElement> {
-  width?: number
-  height?: number
-  x?: number
-  y?: number
-  cx?: number
-  cy?: number
-  cr?: number
-  className?: string
-  glow?: boolean
-  [key: string]: unknown
+  width?: number;
+  height?: number;
+  x?: number;
+  y?: number;
+  cx?: number;
+  cy?: number;
+  cr?: number;
+  className?: string;
+  glow?: boolean;
+  [key: string]: unknown;
 }
 
 /**
@@ -66,8 +67,8 @@ interface DotPatternProps extends React.SVGProps<SVGSVGElement> {
  * purity rule rejects and which reshuffles the glow on every re-render).
  */
 function pseudoRandom(seed: number) {
-  const value = Math.sin(seed * 12.9898) * 43758.5453
-  return value - Math.floor(value)
+  const value = Math.sin(seed * 12.9898) * 43758.5453;
+  return value - Math.floor(value);
 }
 
 export function DotPattern({
@@ -82,23 +83,23 @@ export function DotPattern({
   glow = false,
   ...props
 }: DotPatternProps) {
-  const id = useId()
-  const containerRef = useRef<SVGSVGElement>(null)
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
+  const id = useId();
+  const containerRef = useRef<SVGSVGElement>(null);
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
-    if (!glow) return
+    if (!glow) return;
     const updateDimensions = () => {
       if (containerRef.current) {
-        const { width, height } = containerRef.current.getBoundingClientRect()
-        setDimensions({ width, height })
+        const { width, height } = containerRef.current.getBoundingClientRect();
+        setDimensions({ width, height });
       }
-    }
+    };
 
-    updateDimensions()
-    window.addEventListener("resize", updateDimensions)
-    return () => window.removeEventListener("resize", updateDimensions)
-  }, [glow])
+    updateDimensions();
+    window.addEventListener("resize", updateDimensions);
+    return () => window.removeEventListener("resize", updateDimensions);
+  }, [glow]);
 
   // Static dots: one SVG <pattern> instead of a node per dot. Renders on the
   // server and costs nothing at runtime. (Local change to the Magic UI component.)
@@ -106,55 +107,40 @@ export function DotPattern({
     return (
       <svg
         aria-hidden="true"
-        className={cn(
-          "pointer-events-none absolute inset-0 h-full w-full text-neutral-400/80",
-          className
-        )}
+        className={cn("pointer-events-none absolute inset-0 h-full w-full text-neutral-400/80", className)}
         {...props}
       >
         <defs>
-          <pattern
-            id={`${id}-dots`}
-            width={width}
-            height={height}
-            x={x}
-            y={y}
-            patternUnits="userSpaceOnUse"
-          >
+          <pattern id={`${id}-dots`} width={width} height={height} x={x} y={y} patternUnits="userSpaceOnUse">
             <circle cx={cx} cy={cy} r={cr} fill="currentColor" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill={`url(#${id}-dots)`} />
       </svg>
-    )
+    );
   }
 
   const dots = Array.from(
     {
-      length:
-        Math.ceil(dimensions.width / width) *
-        Math.ceil(dimensions.height / height),
+      length: Math.ceil(dimensions.width / width) * Math.ceil(dimensions.height / height),
     },
     (_, i) => {
-      const col = i % Math.ceil(dimensions.width / width)
-      const row = Math.floor(i / Math.ceil(dimensions.width / width))
+      const col = i % Math.ceil(dimensions.width / width);
+      const row = Math.floor(i / Math.ceil(dimensions.width / width));
       return {
         x: col * width + cx + x,
         y: row * height + cy + y,
         delay: pseudoRandom(i) * 5,
         duration: pseudoRandom(i + 0.5) * 3 + 2,
-      }
-    }
-  )
+      };
+    },
+  );
 
   return (
     <svg
       ref={containerRef}
       aria-hidden="true"
-      className={cn(
-        "pointer-events-none absolute inset-0 h-full w-full text-neutral-400/80",
-        className
-      )}
+      className={cn("pointer-events-none absolute inset-0 h-full w-full text-neutral-400/80", className)}
       {...props}
     >
       <defs>
@@ -193,5 +179,5 @@ export function DotPattern({
         />
       ))}
     </svg>
-  )
+  );
 }

@@ -1,0 +1,10 @@
+# Unix line endings everywhere: Biome enforces LF, and this stops Git on Windows
+# from converting files to CRLF on checkout.
+* text=auto eol=lf
+
+# Binary files: never touch line endings.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.ico binary
+*.woff2 binary

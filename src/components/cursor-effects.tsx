@@ -106,7 +106,7 @@ function CursorLayer() {
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = colorRef.current;
-      const drag = Math.pow(0.08, dt); // velocity falls to 8% per second
+      const drag = 0.08 ** dt; // velocity falls to 8% per second
       for (let i = sparkles.length - 1; i >= 0; i--) {
         const s = sparkles[i];
         s.age += dt;
@@ -206,6 +206,7 @@ function CursorLayer() {
       <canvas
         ref={canvasRef}
         aria-hidden="true"
+        tabIndex={-1}
         className="pointer-events-none fixed inset-0 z-[100] size-full print:hidden"
       />
       {/* White + difference blend = inverted against whatever is underneath, in either theme. */}

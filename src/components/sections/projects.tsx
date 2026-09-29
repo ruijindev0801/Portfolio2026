@@ -30,7 +30,9 @@ export function ProjectList({ items }: { items: Project[] }) {
                     {href ? <TextLink href={href}>{project.name}</TextLink> : project.name}
                   </CardTitle>
                   {project.year && (
-                    <span className="shrink-0 font-mono text-xs text-muted-foreground tabular-nums">{project.year}</span>
+                    <span className="shrink-0 font-mono text-xs text-muted-foreground tabular-nums">
+                      {project.year}
+                    </span>
                   )}
                 </div>
                 <CardDescription className="text-pretty">{project.description}</CardDescription>

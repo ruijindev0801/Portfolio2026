@@ -3,14 +3,7 @@
 import { Menu } from "lucide-react";
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { linkIcon } from "@/lib/link-icons";
 import type { Link } from "@/lib/types";
 import { scrollToSection } from "./command-menu";

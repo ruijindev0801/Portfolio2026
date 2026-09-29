@@ -92,9 +92,7 @@ function host(url: string): string {
 export function linkIcon(label: string, url: string): Icon {
   const h = host(url);
   return (
-    BRANDS.find(([pattern]) => pattern.test(h))?.[1] ??
-    LABELS.find(([pattern]) => pattern.test(label))?.[1] ??
-    LinkIcon
+    BRANDS.find(([pattern]) => pattern.test(h))?.[1] ?? LABELS.find(([pattern]) => pattern.test(label))?.[1] ?? LinkIcon
   );
 }
 

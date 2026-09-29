@@ -21,7 +21,7 @@ export function useActiveSection(): string | null {
       },
       { rootMargin: "-40% 0px -55% 0px" },
     );
-    sections.forEach((section) => observer.observe(section));
+    for (const section of sections) observer.observe(section);
 
     // Short sections at the very bottom may never reach the band above.
     const onScroll = () => {

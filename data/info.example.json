@@ -79,9 +79,7 @@
       "start": "2019-05",
       "end": "2019-08",
       "summary": "Trained perception models for warehouse picking robots.",
-      "highlights": [
-        "Raised object-detection mAP by 6 points with a synthetic-data augmentation pipeline."
-      ],
+      "highlights": ["Raised object-detection mAP by 6 points with a synthetic-data augmentation pipeline."],
       "tech": ["PyTorch", "OpenCV", "ROS"]
     }
   ],
@@ -91,10 +89,7 @@
       "name": "EvalKit",
       "year": 2025,
       "description": "Open-source toolkit for regression-testing LLM applications: golden datasets, calibrated LLM-as-judge scoring, and CI integration.",
-      "metrics": [
-        { "value": "2.3k", "label": "GitHub stars" },
-        { "value": "40+", "label": "teams in production" }
-      ],
+      "metrics": [{ "value": "2.3k", "label": "GitHub stars" }, { "value": "40+", "label": "teams in production" }],
       "tech": ["Python", "PyTorch", "FastAPI", "DuckDB"],
       "links": [
         { "label": "Code", "url": "https://example.com/evalkit" },
@@ -105,10 +100,7 @@
       "name": "Distilled Reranker",
       "year": 2024,
       "description": "Distilled a cross-encoder reranker into a 30M-parameter bi-encoder for fast on-device search.",
-      "metrics": [
-        { "value": "98%", "label": "of teacher nDCG@10" },
-        { "value": "11×", "label": "faster inference" }
-      ],
+      "metrics": [{ "value": "98%", "label": "of teacher nDCG@10" }, { "value": "11×", "label": "faster inference" }],
       "tech": ["PyTorch", "Sentence Transformers", "ONNX"],
       "links": [
         { "label": "Paper", "url": "https://example.com/reranker/paper" },
@@ -217,10 +209,7 @@
       "school": "Lakeside University",
       "start": "2018-09",
       "end": "2020-05",
-      "details": [
-        "Specialization in machine learning",
-        "Thesis: Efficient retrieval with distilled bi-encoders"
-      ]
+      "details": ["Specialization in machine learning", "Thesis: Efficient retrieval with distilled bi-encoders"]
     },
     {
       "degree": "B.S. in Computer Science, Minor in Mathematics",
@@ -251,6 +240,6 @@
 
   "contact": {
     "heading": "Get in touch",
-    "message":"I'm open to senior ML engineering and LLM infrastructure roles, and always happy to talk about evaluation and inference. Email is the fastest way to reach me."
+    "message": "I'm open to senior ML engineering and LLM infrastructure roles, and always happy to talk about evaluation and inference. Email is the fastest way to reach me."
   }
 }

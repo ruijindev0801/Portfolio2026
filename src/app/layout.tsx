@@ -68,6 +68,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <head>
+        {/* biome-ignore lint/security/noDangerouslySetInnerHtml: a static style string defined above, no user input */}
         <noscript dangerouslySetInnerHTML={{ __html: noScriptStyles }} />
       </head>
       <body>

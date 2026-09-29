@@ -1,5 +1,5 @@
 import { formatDate, formatRange } from "@/lib/format";
-import { info, sections, SECTIONS, type SectionKey } from "@/lib/info";
+import { info, SECTIONS, type SectionKey, sections } from "@/lib/info";
 import type { Link } from "@/lib/types";
 
 // Plain-Markdown version of the portfolio for AI assistants and crawlers (https://llmstxt.org).
@@ -7,8 +7,7 @@ import type { Link } from "@/lib/types";
 export const dynamic = "force-static";
 
 // Absolute URLs: this file is read outside the site, where "/certificates/…" means nothing.
-const link = (label: string, url?: string) =>
-  url ? `[${label}](${new URL(url, info.settings.siteUrl).href})` : label;
+const link = (label: string, url?: string) => (url ? `[${label}](${new URL(url, info.settings.siteUrl).href})` : label);
 const joinLinks = (links?: Link[]) => (links?.length ? ` (${links.map((l) => link(l.label, l.url)).join(", ")})` : "");
 
 function section(key: SectionKey): string[] {
@@ -28,11 +27,13 @@ function section(key: SectionKey): string[] {
       });
     case "publications":
       return (info.publications ?? []).map(
-        (paper) => `- ${link(paper.title, paper.url)}. ${paper.authors.join(", ")}. *${paper.venue}*, ${paper.year}.${joinLinks(paper.links)}`,
+        (paper) =>
+          `- ${link(paper.title, paper.url)}. ${paper.authors.join(", ")}. *${paper.venue}*, ${paper.year}.${joinLinks(paper.links)}`,
       );
     case "writing":
       return (info.writing ?? []).map(
-        (item) => `- ${link(item.title, item.url)} — ${[item.kind, item.publisher, formatDate(item.date)].filter(Boolean).join(", ")}`,
+        (item) =>
+          `- ${link(item.title, item.url)} — ${[item.kind, item.publisher, formatDate(item.date)].filter(Boolean).join(", ")}`,
       );
     case "skills":
       return (info.skills ?? []).map((group) => `- ${group.category}: ${group.items.join(", ")}`);
@@ -43,7 +44,8 @@ function section(key: SectionKey): string[] {
     case "certifications":
     case "awards":
       return (info[key] ?? []).map(
-        (item) => `- ${link(item.name, item.url)}${item.issuer ? `, ${item.issuer}` : ""}${item.date ? ` (${formatDate(item.date)})` : ""}`,
+        (item) =>
+          `- ${link(item.name, item.url)}${item.issuer ? `, ${item.issuer}` : ""}${item.date ? ` (${formatDate(item.date)})` : ""}`,
       );
     case "contact":
       return [

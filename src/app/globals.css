@@ -240,6 +240,7 @@
     font-size: 10.5pt;
   }
 
+  /* biome-ignore-start lint/complexity/noImportantStyles: print must override inline animation styles */
   /* Show content that would otherwise wait for a scroll animation. */
   [data-slot="blur-fade"],
   [data-slot="section-rule"] {
@@ -266,6 +267,7 @@
     clip-path: none !important;
     white-space: normal !important;
   }
+  /* biome-ignore-end lint/complexity/noImportantStyles: print must override inline animation styles */
 
   h2,
   h3 {

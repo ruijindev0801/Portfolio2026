@@ -35,19 +35,24 @@ const formatRange = (start, end) => {
   const to = end ? formatDate(end) : "Present";
   return from === to ? from : `${from} - ${to}`;
 };
-const escape = (text = "") =>
+const escapeHtml = (text = "") =>
   String(text).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 // "https://www.linkedin.com/in/name/" -> "linkedin.com/in/name"
-const displayUrl = (url) => url.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/$/, "");
-const link = (url, text = displayUrl(url)) => `<a href="${escape(url)}">${escape(text)}</a>`;
+const displayUrl = (url) =>
+  url
+    .replace(/^https?:\/\//, "")
+    .replace(/^www\./, "")
+    .replace(/\/$/, "");
+const link = (url, text = displayUrl(url)) => `<a href="${escapeHtml(url)}">${escapeHtml(text)}</a>`;
 const absolute = (url) => new URL(url, settings.siteUrl).href;
 const isMessaging = (url) => /wa\.me|whatsapp\.com/i.test(url);
 
 // ---------- content ----------
 
 const contactLine = [
-  profile.location && escape(profile.location),
-  profile.phone && `${escape(profile.phone)}${(info.social ?? []).some((l) => isMessaging(l.url)) ? " (WhatsApp)" : ""}`,
+  profile.location && escapeHtml(profile.location),
+  profile.phone &&
+    `${escapeHtml(profile.phone)}${(info.social ?? []).some((l) => isMessaging(l.url)) ? " (WhatsApp)" : ""}`,
   profile.email && link(`mailto:${profile.email}`, profile.email),
 ].filter(Boolean);
 
@@ -62,21 +67,22 @@ const linkLine = [
 ];
 
 const section = (title, body) => (body ? `<section><h2>${title}</h2>${body}</section>` : "");
-const bullets = (items = []) => (items.length ? `<ul>${items.map((i) => `<li>${escape(i)}</li>`).join("")}</ul>` : "");
+const bullets = (items = []) =>
+  items.length ? `<ul>${items.map((i) => `<li>${escapeHtml(i)}</li>`).join("")}</ul>` : "";
 
-const summary = profile.summary ? `<p>${escape(profile.summary)}</p>` : "";
+const summary = profile.summary ? `<p>${escapeHtml(profile.summary)}</p>` : "";
 
 const skills = (info.skills ?? [])
-  .map((g) => `<p class="skill"><b>${escape(g.category)}:</b> ${escape(g.items.join(", "))}</p>`)
+  .map((g) => `<p class="skill"><b>${escapeHtml(g.category)}:</b> ${escapeHtml(g.items.join(", "))}</p>`)
   .join("");
 
 const experience = (info.experience ?? [])
   .map(
     (job) => `
     <div class="entry">
-      <div class="row"><span><b>${escape(job.role)}</b> | ${escape(job.company)}</span><span class="dates">${formatRange(job.start, job.end)}</span></div>
-      <div class="meta">${escape([job.location, job.type].filter(Boolean).join(", "))}</div>
-      ${job.summary ? `<p class="summary">${escape(job.summary)}</p>` : ""}
+      <div class="row"><span><b>${escapeHtml(job.role)}</b> | ${escapeHtml(job.company)}</span><span class="dates">${formatRange(job.start, job.end)}</span></div>
+      <div class="meta">${escapeHtml([job.location, job.type].filter(Boolean).join(", "))}</div>
+      ${job.summary ? `<p class="summary">${escapeHtml(job.summary)}</p>` : ""}
       ${bullets(job.highlights)}
     </div>`,
   )
@@ -87,8 +93,8 @@ const projects = (info.projects ?? [])
     const url = project.url ?? project.links?.[0]?.url;
     return `
     <div class="entry">
-      <div class="row"><span><b>${escape(project.name)}</b>${project.tech?.length ? ` | ${escape(project.tech.join(", "))}` : ""}</span>${url ? `<span class="dates">${link(absolute(url))}</span>` : ""}</div>
-      <p>${escape(project.description)}</p>
+      <div class="row"><span><b>${escapeHtml(project.name)}</b>${project.tech?.length ? ` | ${escapeHtml(project.tech.join(", "))}` : ""}</span>${url ? `<span class="dates">${link(absolute(url))}</span>` : ""}</div>
+      <p>${escapeHtml(project.description)}</p>
     </div>`;
   })
   .join("");
@@ -97,8 +103,8 @@ const education = (info.education ?? [])
   .map(
     (school) => `
     <div class="entry">
-      <div class="row"><span><b>${escape(school.degree)}</b> | ${escape(school.school)}${school.location ? `, ${escape(school.location)}` : ""}</span><span class="dates">${formatRange(school.start, school.end)}</span></div>
-      ${school.details?.length ? `<p>${escape(school.details.join(". "))}.</p>` : ""}
+      <div class="row"><span><b>${escapeHtml(school.degree)}</b> | ${escapeHtml(school.school)}${school.location ? `, ${escapeHtml(school.location)}` : ""}</span><span class="dates">${formatRange(school.start, school.end)}</span></div>
+      ${school.details?.length ? `<p>${escapeHtml(school.details.join(". "))}.</p>` : ""}
     </div>`,
   )
   .join("");
@@ -107,7 +113,7 @@ const credentials = (items = []) =>
   items
     .map(
       (item) => `
-    <div class="row"><span><b>${escape(item.name)}</b>${item.issuer ? `, ${escape(item.issuer)}` : ""}</span>${item.date ? `<span class="dates">${formatDate(item.date)}</span>` : ""}</div>`,
+    <div class="row"><span><b>${escapeHtml(item.name)}</b>${item.issuer ? `, ${escapeHtml(item.issuer)}` : ""}</span>${item.date ? `<span class="dates">${formatDate(item.date)}</span>` : ""}</div>`,
     )
     .join("");
 
@@ -115,7 +121,7 @@ const html = `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>${escape(profile.name)} Resume</title>
+<title>${escapeHtml(profile.name)} Resume</title>
 <style>
   @page { size: Letter; margin: 0.5in 0.6in; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -138,8 +144,8 @@ const html = `<!doctype html>
 </head>
 <body>
   <header>
-    <h1>${escape(profile.name)}</h1>
-    <p class="headline">${escape(profile.headline)}</p>
+    <h1>${escapeHtml(profile.name)}</h1>
+    <p class="headline">${escapeHtml(profile.headline)}</p>
     <p class="contact">${contactLine.join(" | ")}</p>
     <p class="contact">${linkLine.join(" | ")}</p>
   </header>
@@ -155,9 +161,11 @@ const html = `<!doctype html>
 
 // ---------- print ----------
 
-const target = profile.resume && profile.resume.startsWith("/") ? profile.resume : "/resume.pdf";
+const target = profile.resume?.startsWith("/") ? profile.resume : "/resume.pdf";
 if (target !== profile.resume) {
-  console.warn(`profile.resume is "${profile.resume ?? ""}"; writing /resume.pdf. Set profile.resume to "/resume.pdf" to link it.`);
+  console.warn(
+    `profile.resume is "${profile.resume ?? ""}"; writing /resume.pdf. Set profile.resume to "/resume.pdf" to link it.`,
+  );
 }
 const outFile = join(root, "public", ...target.split("/").filter(Boolean));
 

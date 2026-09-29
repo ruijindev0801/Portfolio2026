@@ -9,7 +9,12 @@ import { cn } from "@/lib/utils";
 
 const noopSubscribe = () => () => {};
 /** False during server render and hydration, true afterwards. */
-const useMounted = () => useSyncExternalStore(noopSubscribe, () => true, () => false);
+const useMounted = () =>
+  useSyncExternalStore(
+    noopSubscribe,
+    () => true,
+    () => false,
+  );
 
 /**
  * Animated background: Magic UI's FlickeringGrid, a canvas of small squares that
