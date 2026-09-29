@@ -1,0 +1,205 @@
+{
+  "settings": {
+    "siteUrl": "https://ruijin.dev.vercel.app",
+    "defaultTheme": "system",
+    "sections": [
+      "about",
+      "experience",
+      "projects",
+      "publications",
+      "writing",
+      "skills",
+      "education",
+      "certifications",
+      "awards",
+      "contact"
+    ]
+  },
+
+  "profile": {
+    "name": "Rui Jin",
+    "headline": "AI/ML Engineer",
+    "location": "Surigao del Norte, Philippines",
+    "email": "ruijin.developer@gmail.com",
+    "avatar": "",
+    "status": "Open to AI/ML roles",
+    "bio": "I build computer vision and machine learning systems that have to work in real time, often on small devices with no cloud behind them. I've spent 7+ years shipping ML and full-stack work, most of it remotely with US-based teams.",
+    "resume": "/Rui_Jin_Resume.pdf",
+    "summary": "AI/ML engineer with 7+ years of experience building computer vision and machine learning systems, from real-time pose tracking on low-power edge devices to the data pipelines, MLOps tooling, and full-stack web apps around them. Hands-on with Python, TensorFlow, OpenCV, YOLO, React, Next.js, AWS, and Google Cloud, and currently doing LLM training and evaluation work.",
+    "phone": "+63 931 207 1477"
+  },
+
+  "social": [
+    { "label": "GitHub", "url": "https://github.com/ruijindev0801" },
+    { "label": "WhatsApp", "url": "https://wa.me/639312071477" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/ruijindev0801" },
+    { "label": "Hugging Face", "url": "https://huggingface.co/ruijindev0801" },
+    { "label": "Kaggle", "url": "https://www.kaggle.com/ruijindev0801" }
+  ],
+
+  "about": [
+    "Most of my work sits where machine learning meets real products. I train and tune models in Python with TensorFlow and scikit-learn, and I'm just as comfortable building the React or Next.js app that puts a model in front of users, or setting up the AWS and Google Cloud infrastructure it runs on.",
+    "I spent three years at Nex working on the body tracking behind Nex Playground, a game console you play by moving around. Everything had to run on the device itself, so a lot of my time went into making vision models smaller and faster, and into building the tools we used to test them. These days I do LLM training and evaluation work with Outlier and DataAnnotation, and in May 2026 I passed micro1's AI interview to become a certified AI/ML Engineer."
+  ],
+
+  "experience": [
+    {
+      "role": "Prompt Engineer",
+      "company": "Outlier & DataAnnotation",
+      "location": "Remote",
+      "type": "Contract",
+      "start": "2025-03",
+      "end": null,
+      "highlights": [
+        "Write and refine prompts for large language models (LLMs) across classification, summarization, code generation, and multi-step reasoning tasks.",
+        "Score and compare model responses against detailed rubrics, flag hallucinations, and help improve the quality of LLM training data."
+      ],
+      "tech": ["LLMs", "Prompt engineering", "LLM evaluation"]
+    },
+    {
+      "role": "AI/ML Engineer",
+      "company": "Nex",
+      "location": "Remote",
+      "type": "Contract",
+      "start": "2022-03",
+      "end": "2025-03",
+      "summary": "Worked on the real-time body tracking inside Nex Playground, a camera-based game console you control by moving.",
+      "highlights": [
+        "Built and optimized lightweight computer vision models for real-time pose and gesture tracking on low-power ARM devices, with all inference running on-device instead of in the cloud.",
+        "Wrote low-latency code for camera input, sensor fusion, and model inference, and connected it to the SDK our game designers and outside Unity developers used to build motion-controlled games.",
+        "Set up data pipelines and MLOps tooling to train, evaluate, and deploy models, plus debugging tools to check tracking accuracy across different lighting and room setups."
+      ],
+      "tech": ["Computer vision", "Pose estimation", "On-device ML", "Sensor fusion", "MLOps"]
+    },
+    {
+      "role": "Freelance Software Developer",
+      "company": "Upwork",
+      "location": "Remote",
+      "start": "2021-06",
+      "end": "2022-11",
+      "highlights": [
+        "Completed 20+ full-stack and AI integration projects while keeping a 5-star client rating.",
+        "Built and shipped web apps with React, Next.js, Flask, and Python on AWS and Google Cloud for SaaS, e-commerce, and analytics clients.",
+        "Added LLM features and third-party API integrations to client products, and automated manual workflows along the way."
+      ],
+      "tech": ["React", "Next.js", "Flask", "Python", "JavaScript", "AWS", "GCP"]
+    },
+    {
+      "role": "Full-Stack Developer",
+      "company": "Customized Limited",
+      "location": "Remote",
+      "type": "Part-time",
+      "start": "2019-09",
+      "end": "2022-12",
+      "highlights": [
+        "Built, tested, and deployed front-end and back-end features for the company's platform using Java, Python, and Node.js.",
+        "Used Python to connect the platform to the company's computer vision and machine learning models.",
+        "Worked with full-time engineers and ML interns who processed and labeled the video data behind those models."
+      ],
+      "tech": ["Java", "Python", "Node.js"]
+    },
+    {
+      "role": "Software Engineer Intern",
+      "company": "Cloudbreakr",
+      "location": "Hong Kong",
+      "type": "Internship",
+      "start": "2018-06",
+      "end": "2019-08",
+      "highlights": [
+        "Built features for an influencer marketing platform, using PHP and Laravel on the back end and JavaScript and React on the front end.",
+        "Added tracking charts to influencer profiles and built dashboards that showed brand clients the ROI of their campaigns.",
+        "Took features from design through testing and release, fixed bugs, and met my own milestones and delivery deadlines."
+      ],
+      "tech": ["PHP", "Laravel", "JavaScript", "React"]
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "Shark Detection from Drone Footage",
+      "description": "Spots and tracks sharks in drone video in real time, using a YOLO object detection model and OpenCV.",
+      "tech": ["Python", "TensorFlow", "OpenCV", "YOLO", "Drone SDK"]
+    },
+    {
+      "name": "Instagram Photo Protection",
+      "description": "Uses image recognition and watermarking to catch and prevent unauthorized use of photos posted on Instagram.",
+      "tech": ["Python", "TensorFlow", "OpenCV", "Instagram API"]
+    },
+    {
+      "name": "GitHub Scraping & Analytics Tool",
+      "description": "Desktop app that collects GitHub data through scraping and the GitHub API, then shows it in live, interactive dashboards.",
+      "tech": ["Python", "CustomTkinter", "GitHub API"]
+    },
+    {
+      "name": "SaaS Landing Page",
+      "description": "A fast, responsive landing page for a SaaS product, with email integration through Resend.",
+      "tech": ["Next.js", "React", "Tailwind CSS", "Resend"],
+      "links": [{ "label": "trashlion.com", "url": "https://trashlion.com" }]
+    }
+  ],
+
+  "publications": [],
+  "writing": [],
+
+  "skills": [
+    { "category": "Languages", "items": ["Python", "TypeScript", "JavaScript", "Java", "C#", "SQL"] },
+    {
+      "category": "Machine learning",
+      "items": [
+        "TensorFlow",
+        "scikit-learn",
+        "OpenCV",
+        "YOLO",
+        "Deep learning",
+        "Computer vision",
+        "Object detection",
+        "Pose estimation",
+        "On-device ML",
+        "ML pipelines",
+        "MLOps"
+      ]
+    },
+    {
+      "category": "LLMs & NLP",
+      "items": ["LLM integration", "LLM evaluation", "Prompt engineering", "Natural language processing (NLP)"]
+    },
+    { "category": "Web development", "items": ["React", "Next.js", "Node.js", "Flask", "Tailwind CSS", "REST APIs"] },
+    {
+      "category": "Cloud & DevOps",
+      "items": ["AWS", "Google Cloud (GCP)", "Kubernetes", "Docker", "CI/CD", "Git"]
+    },
+    { "category": "Data", "items": ["NoSQL", "ETL pipelines", "Data analytics", "Data visualization"] }
+  ],
+
+  "education": [
+    {
+      "degree": "Bachelor of Computer Science",
+      "school": "City University of Hong Kong",
+      "url": "https://www.cityu.edu.hk",
+      "location": "Hong Kong",
+      "start": "2016-05",
+      "end": "2020-01",
+      "details": [
+        "Graduated with honors, focusing on software development and AI",
+        "Thesis: AI-driven web applications",
+        "Member of the Computer Science Club"
+      ]
+    }
+  ],
+
+  "certifications": [
+    {
+      "name": "Certified AI/ML Engineer",
+      "issuer": "micro1",
+      "date": "2026-05-14",
+      "url": "/certificates/593317626-7fd61629-16a1-4dab-8b8b-08942077441e.png"
+    }
+  ],
+
+  "awards": [],
+
+  "contact": {
+    "heading": "Get in touch",
+    "message": "I'm looking for my next AI/ML role. Email is the quickest way to reach me, but WhatsApp works too."
+  }
+}
