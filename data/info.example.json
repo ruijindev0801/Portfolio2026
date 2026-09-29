@@ -1,0 +1,256 @@
+{
+  "settings": {
+    "siteUrl": "https://example.com",
+    "defaultTheme": "system",
+    "sections": [
+      "about",
+      "experience",
+      "projects",
+      "publications",
+      "writing",
+      "skills",
+      "education",
+      "certifications",
+      "awards",
+      "contact"
+    ]
+  },
+
+  "profile": {
+    "name": "Alex Morgan",
+    "headline": "Machine Learning Engineer",
+    "location": "San Francisco, CA",
+    "email": "alex@example.com",
+    "avatar": "",
+    "status": "Open to senior ML engineering roles",
+    "workAuthorization": "U.S. Citizen",
+    "bio": "I build production ML systems — from training pipelines to low-latency LLM inference. Currently leading model serving at Northwind AI, where our platform handles 40M+ requests a day.",
+    "resume": "/resume.pdf"
+  },
+
+  "social": [
+    { "label": "GitHub", "url": "https://github.com/" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/" },
+    { "label": "Google Scholar", "url": "https://scholar.google.com/" },
+    { "label": "Hugging Face", "url": "https://huggingface.co/" },
+    { "label": "X", "url": "https://x.com/" }
+  ],
+
+  "about": [
+    "I'm a machine learning engineer with six years of experience taking models from prototype to production. My work sits where modeling meets infrastructure: distributed training, evaluation you can trust, and serving that stays fast and affordable under real traffic.",
+    "Lately I've focused on LLM systems — retrieval, fine-tuning, and the evaluation harnesses that tell you whether a change actually made things better. I care about measurable impact, reproducible experiments, and code other engineers enjoy working in."
+  ],
+
+  "experience": [
+    {
+      "role": "Senior Machine Learning Engineer",
+      "company": "Northwind AI",
+      "url": "https://example.com",
+      "location": "San Francisco, CA",
+      "start": "2023-03",
+      "end": null,
+      "summary": "Tech lead for the inference platform behind Northwind's LLM products.",
+      "highlights": [
+        "Cut p95 latency 42% and GPU cost 35% by moving serving to vLLM with continuous batching, FP8 quantization, and speculative decoding.",
+        "Designed the offline and online evaluation pipeline that gates every model release; it caught three quality regressions before launch.",
+        "Scaled the platform from 2M to 40M+ requests a day on Kubernetes with zero-downtime model rollouts."
+      ],
+      "tech": ["PyTorch", "vLLM", "Ray", "Kubernetes", "Triton", "AWS"]
+    },
+    {
+      "role": "Machine Learning Engineer",
+      "company": "Contoso Health",
+      "location": "Boston, MA",
+      "start": "2020-06",
+      "end": "2023-02",
+      "summary": "Built clinical NLP models that help care teams triage patient messages at 200+ hospitals.",
+      "highlights": [
+        "Shipped a transformer-based triage classifier (F1 0.91, +9 pts over the rules baseline) serving 1.5M messages a month.",
+        "Built a HIPAA-compliant training pipeline on SageMaker with automated retraining and drift monitoring.",
+        "Introduced experiment tracking with MLflow and mentored four junior engineers."
+      ],
+      "tech": ["Python", "Hugging Face", "SageMaker", "MLflow", "Airflow"]
+    },
+    {
+      "role": "Machine Learning Intern",
+      "company": "Fabrikam Robotics",
+      "location": "Pittsburgh, PA",
+      "type": "Internship",
+      "start": "2019-05",
+      "end": "2019-08",
+      "summary": "Trained perception models for warehouse picking robots.",
+      "highlights": [
+        "Raised object-detection mAP by 6 points with a synthetic-data augmentation pipeline."
+      ],
+      "tech": ["PyTorch", "OpenCV", "ROS"]
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "EvalKit",
+      "year": 2025,
+      "description": "Open-source toolkit for regression-testing LLM applications: golden datasets, calibrated LLM-as-judge scoring, and CI integration.",
+      "metrics": [
+        { "value": "2.3k", "label": "GitHub stars" },
+        { "value": "40+", "label": "teams in production" }
+      ],
+      "tech": ["Python", "PyTorch", "FastAPI", "DuckDB"],
+      "links": [
+        { "label": "Code", "url": "https://example.com/evalkit" },
+        { "label": "Docs", "url": "https://example.com/evalkit/docs" }
+      ]
+    },
+    {
+      "name": "Distilled Reranker",
+      "year": 2024,
+      "description": "Distilled a cross-encoder reranker into a 30M-parameter bi-encoder for fast on-device search.",
+      "metrics": [
+        { "value": "98%", "label": "of teacher nDCG@10" },
+        { "value": "11×", "label": "faster inference" }
+      ],
+      "tech": ["PyTorch", "Sentence Transformers", "ONNX"],
+      "links": [
+        { "label": "Paper", "url": "https://example.com/reranker/paper" },
+        { "label": "Code", "url": "https://example.com/reranker" },
+        { "label": "Model", "url": "https://example.com/reranker/model" }
+      ]
+    },
+    {
+      "name": "Spot GPU Scheduler",
+      "year": 2023,
+      "description": "Kubernetes scheduler that right-sizes training jobs across spot and on-demand GPUs, with automatic checkpoint-and-resume on preemption.",
+      "metrics": [{ "value": "31%", "label": "lower training cost" }],
+      "tech": ["Go", "Ray", "Kubernetes", "Prometheus"],
+      "links": [
+        { "label": "Code", "url": "https://example.com/gpu-scheduler" },
+        { "label": "Write-up", "url": "https://example.com/gpu-scheduler/post" }
+      ]
+    },
+    {
+      "name": "Tiny Diffusion",
+      "year": 2022,
+      "description": "A 400-line DDPM implementation written from scratch for teaching, used in a graduate machine learning course.",
+      "metrics": [{ "value": "600+", "label": "students" }],
+      "tech": ["PyTorch", "Jupyter"],
+      "links": [
+        { "label": "Code", "url": "https://example.com/tiny-diffusion" },
+        { "label": "Demo", "url": "https://example.com/tiny-diffusion/demo" }
+      ]
+    }
+  ],
+
+  "publications": [
+    {
+      "title": "Calibrating LLM-as-a-Judge for Production Evaluation",
+      "authors": ["Alex Morgan", "Jordan Lee", "Priya Raman"],
+      "venue": "NeurIPS 2025 Workshop on ML Systems",
+      "year": 2025,
+      "note": "Spotlight",
+      "url": "https://example.com/papers/llm-judge",
+      "links": [
+        { "label": "PDF", "url": "https://example.com/papers/llm-judge.pdf" },
+        { "label": "arXiv", "url": "https://example.com/papers/llm-judge/arxiv" },
+        { "label": "Code", "url": "https://example.com/evalkit" }
+      ]
+    },
+    {
+      "title": "Distilling Cross-Encoders for Efficient On-Device Retrieval",
+      "authors": ["Sam Rivera", "Alex Morgan", "Chris Park"],
+      "venue": "EMNLP 2024, Industry Track",
+      "year": 2024,
+      "url": "https://example.com/papers/distilled-reranker",
+      "links": [
+        { "label": "PDF", "url": "https://example.com/papers/distilled-reranker.pdf" },
+        { "label": "Code", "url": "https://example.com/reranker" }
+      ]
+    }
+  ],
+
+  "writing": [
+    {
+      "kind": "Post",
+      "title": "What we learned serving 40M LLM requests a day",
+      "publisher": "Northwind Engineering Blog",
+      "date": "2025-06",
+      "url": "https://example.com/blog/serving-at-scale"
+    },
+    {
+      "kind": "Talk",
+      "title": "Evaluation is the product: shipping LLM features safely",
+      "publisher": "Bay Area ML Engineering Meetup",
+      "date": "2025-04",
+      "url": "https://example.com/talks/evaluation"
+    },
+    {
+      "kind": "Post",
+      "title": "A practical guide to quantizing LLMs for serving",
+      "publisher": "Personal blog",
+      "date": "2024-11",
+      "url": "https://example.com/blog/quantization"
+    }
+  ],
+
+  "skills": [
+    { "category": "Languages", "items": ["Python", "C++", "Go", "SQL", "TypeScript"] },
+    {
+      "category": "ML & deep learning",
+      "items": ["PyTorch", "JAX", "scikit-learn", "XGBoost", "Hugging Face Transformers"]
+    },
+    {
+      "category": "LLM systems",
+      "items": ["Fine-tuning (LoRA, QLoRA)", "RAG", "Evaluation", "vLLM", "TensorRT-LLM"]
+    },
+    {
+      "category": "MLOps & infrastructure",
+      "items": ["Docker", "Kubernetes", "Ray", "MLflow", "Airflow", "Weights & Biases"]
+    },
+    {
+      "category": "Cloud & data",
+      "items": ["AWS (SageMaker, S3)", "GCP (Vertex AI, BigQuery)", "Spark", "PostgreSQL"]
+    }
+  ],
+
+  "education": [
+    {
+      "degree": "M.S. in Computer Science",
+      "school": "Lakeside University",
+      "start": "2018-09",
+      "end": "2020-05",
+      "details": [
+        "Specialization in machine learning",
+        "Thesis: Efficient retrieval with distilled bi-encoders"
+      ]
+    },
+    {
+      "degree": "B.S. in Computer Science, Minor in Mathematics",
+      "school": "Westbrook University",
+      "start": "2014-09",
+      "end": "2018-05",
+      "details": ["Magna cum laude"]
+    }
+  ],
+
+  "certifications": [
+    {
+      "name": "AWS Certified Machine Learning – Specialty",
+      "issuer": "Amazon Web Services",
+      "date": "2024-03"
+    },
+    {
+      "name": "Professional Machine Learning Engineer",
+      "issuer": "Google Cloud",
+      "date": "2023-08"
+    }
+  ],
+
+  "awards": [
+    { "name": "Engineering Excellence Award", "issuer": "Northwind AI", "date": "2024-12" },
+    { "name": "Kaggle Competitions Expert", "issuer": "Kaggle", "date": "2021-07" }
+  ],
+
+  "contact": {
+    "heading": "Get in touch",
+    "message":"I'm open to senior ML engineering and LLM infrastructure roles, and always happy to talk about evaluation and inference. Email is the fastest way to reach me."
+  }
+}
