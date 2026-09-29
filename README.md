@@ -60,9 +60,10 @@ For a fully filled-in example of every section, see [`data/info.example.json`](d
 | Key | What it holds |
 | --- | --- |
 | `settings` | `siteUrl` (your domain), `defaultTheme` (`"system"`, `"light"` or `"dark"`), `sections` (order and visibility) |
-| `profile` | `name`, `headline`, `location`, `email`, `avatar`, `status`, `workAuthorization`, `bio`, `resume`; resume-only: `summary`, `phone` |
+| `profile` | `name`, `headline`, `location`, `email`, `avatar`, `status`, `workAuthorization`, `bio`, `resume`, `stats[{ value, label }]` (numbers under the intro); resume-only: `summary`, `phone` |
 | `social` | `[{ "label": "GitHub", "url": "…" }, …]`, shown as icons in the intro, contact card, menu and palette |
 | `about` | Paragraphs of text |
+| `expertise` | "What I work on" cards: `[{ "title": "Computer vision", "description": "…" }, …]`; the icon is picked from the title |
 | `experience` | `role`, `company`, `url`, `logo`, `location`, `type`, `start`, `end`, `summary`, `highlights[]`, `tech[]` |
 | `projects` | `name`, `description`, `year`, `url`, `metrics[{ value, label }]`, `highlights[]`, `tech[]`, `links[]` |
 | `publications` | `title`, `authors[]`, `venue`, `year`, `note` (e.g. "Spotlight"), `url`, `links[]` |
@@ -70,7 +71,7 @@ For a fully filled-in example of every section, see [`data/info.example.json`](d
 | `skills` | `[{ "category": "Languages", "items": ["Python", …] }, …]` |
 | `education` | `degree`, `school`, `url`, `logo`, `location`, `start`, `end`, `details[]` |
 | `certifications`, `awards` | `name`, `issuer`, `date`, `url` |
-| `contact` | `heading` (default "Get in touch") and `message` for the closing card |
+| `contact` | `heading` (default "Get in touch"), `message`, and `booking` (`{ "label": "Book a call", "url": "…" }`) for the closing card |
 
 Conventions:
 

@@ -4,6 +4,7 @@
     "defaultTheme": "system",
     "sections": [
       "about",
+      "expertise",
       "experience",
       "projects",
       "publications",
@@ -25,7 +26,13 @@
     "status": "Open to senior ML engineering roles",
     "workAuthorization": "U.S. Citizen",
     "bio": "I build production ML systems — from training pipelines to low-latency LLM inference. Currently leading model serving at Northwind AI, where our platform handles 40M+ requests a day.",
-    "resume": "/resume.pdf"
+    "resume": "/resume.pdf",
+    "stats": [
+      { "value": "6", "label": "Years in production ML" },
+      { "value": "40M+", "label": "Requests served a day" },
+      { "value": "11×", "label": "Faster inference, distilled ranker" },
+      { "value": "2.3k", "label": "GitHub stars on open source" }
+    ]
   },
 
   "social": [
@@ -39,6 +46,25 @@
   "about": [
     "I'm a machine learning engineer with six years of experience taking models from prototype to production. My work sits where modeling meets infrastructure: distributed training, evaluation you can trust, and serving that stays fast and affordable under real traffic.",
     "Lately I've focused on LLM systems — retrieval, fine-tuning, and the evaluation harnesses that tell you whether a change actually made things better. I care about measurable impact, reproducible experiments, and code other engineers enjoy working in."
+  ],
+
+  "expertise": [
+    {
+      "title": "LLM inference",
+      "description": "Batching, quantization, and caching that keep serving fast and affordable under real traffic"
+    },
+    {
+      "title": "Training pipelines",
+      "description": "Distributed training and reproducible experiment tracking from prototype to production"
+    },
+    {
+      "title": "Evaluation",
+      "description": "Offline and online evaluation harnesses that show whether a change actually helped"
+    },
+    {
+      "title": "Retrieval",
+      "description": "Embedding search and rerankers, including distilled models for low-latency ranking"
+    }
   ],
 
   "experience": [
@@ -240,6 +266,7 @@
 
   "contact": {
     "heading": "Get in touch",
-    "message": "I'm open to senior ML engineering and LLM infrastructure roles, and always happy to talk about evaluation and inference. Email is the fastest way to reach me."
+    "message": "I'm open to senior ML engineering and LLM infrastructure roles, and always happy to talk about evaluation and inference. Email is the fastest way to reach me.",
+    "booking": { "label": "Book a call", "url": "https://calendly.com/" }
   }
 }

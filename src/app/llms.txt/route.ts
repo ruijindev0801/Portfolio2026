@@ -14,6 +14,8 @@ function section(key: SectionKey): string[] {
   switch (key) {
     case "about":
       return (info.about ?? []).flatMap((paragraph, i) => (i ? ["", paragraph] : [paragraph]));
+    case "expertise":
+      return (info.expertise ?? []).map((area) => `- ${area.title}: ${area.description}`);
     case "experience":
       return (info.experience ?? []).flatMap((job) => [
         `- **${job.role}**, ${link(job.company, job.url)} — ${formatRange(job.start, job.end)}${job.location ? `, ${job.location}` : ""}`,
@@ -51,6 +53,7 @@ function section(key: SectionKey): string[] {
       return [
         ...(info.contact?.message ? [info.contact.message] : []),
         ...(info.profile.email ? [`- Email: ${info.profile.email}`] : []),
+        ...(info.contact?.booking ? [`- ${link(info.contact.booking.label, info.contact.booking.url)}`] : []),
         ...(info.social ?? []).map((l) => `- ${link(l.label, l.url)}`),
       ];
   }

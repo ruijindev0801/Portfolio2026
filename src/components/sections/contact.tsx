@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { CalendarDays, Mail } from "lucide-react";
 import { CopyEmailButton } from "@/components/copy-email-button";
 import { GridBackdrop } from "@/components/grid-backdrop";
 import { SocialLinks } from "@/components/social-links";
@@ -10,6 +10,7 @@ import type { Info } from "@/lib/types";
 /** Closing call-to-action card. Rendered in place of a regular Section. */
 export function Contact({ info }: { info: Info }) {
   const { email } = info.profile;
+  const booking = info.contact?.booking;
   return (
     <section id="contact" aria-labelledby="contact-title" className="pt-24 sm:pt-28">
       <BlurFade inView direction="up">
@@ -27,15 +28,27 @@ export function Contact({ info }: { info: Info }) {
             {info.contact?.message && (
               <p className="mx-auto mt-4 max-w-md text-pretty text-muted-foreground">{info.contact.message}</p>
             )}
-            {email && (
+            {(email || booking) && (
               <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
-                <Button asChild size="lg">
-                  <a href={`mailto:${email}`}>
-                    <Mail data-icon="inline-start" />
-                    {email}
-                  </a>
-                </Button>
-                <CopyEmailButton email={email} />
+                {email && (
+                  <>
+                    <Button asChild size="lg">
+                      <a href={`mailto:${email}`}>
+                        <Mail data-icon="inline-start" />
+                        {email}
+                      </a>
+                    </Button>
+                    <CopyEmailButton email={email} />
+                  </>
+                )}
+                {booking && (
+                  <Button asChild size="lg" variant="outline">
+                    <a href={booking.url} target="_blank" rel="noreferrer">
+                      <CalendarDays data-icon="inline-start" />
+                      {booking.label}
+                    </a>
+                  </Button>
+                )}
               </div>
             )}
             <SocialLinks links={info.social} className="mt-6 justify-center" />

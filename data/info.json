@@ -1,9 +1,10 @@
 {
   "settings": {
-    "siteUrl": "https://ruijin.dev.vercel.app",
+    "siteUrl": "https://ruijin-dev.vercel.app",
     "defaultTheme": "system",
     "sections": [
       "about",
+      "expertise",
       "experience",
       "projects",
       "publications",
@@ -23,10 +24,16 @@
     "email": "ruijin.developer@gmail.com",
     "avatar": "",
     "status": "Open to AI/ML roles",
-    "bio": "I build computer vision and machine learning systems that have to work in real time, often on small devices with no cloud behind them. I've spent 7+ years shipping ML and full-stack work, most of it remotely with US-based teams.",
+    "bio": "I build machine learning systems that run in real time on low-power hardware, along with the data pipelines, evaluation tools, and apps around them. I've spent 7+ years shipping ML and full-stack software, most of it remotely with US-based teams.",
     "resume": "/Rui_Jin_Resume.pdf",
     "summary": "AI/ML engineer with 7+ years of experience building computer vision and machine learning systems, from real-time pose tracking on low-power edge devices to the data pipelines, MLOps tooling, and full-stack web apps around them. Hands-on with Python, TensorFlow, OpenCV, YOLO, React, Next.js, AWS, and Google Cloud, and currently doing LLM training and evaluation work.",
-    "phone": "+63 931 207 1477"
+    "phone": "+63 931 207 1477",
+    "stats": [
+      { "value": "7+", "label": "Years shipping ML and software" },
+      { "value": "20+", "label": "Client projects on Upwork" },
+      { "value": "5-star", "label": "Upwork client rating" },
+      { "value": "100%", "label": "On-device inference at Nex" }
+    ]
   },
 
   "social": [
@@ -37,8 +44,36 @@
   ],
 
   "about": [
-    "Most of my work sits where machine learning meets real products. I train and tune models in Python with TensorFlow and scikit-learn, and I'm just as comfortable building the React or Next.js app that puts a model in front of users, or setting up the AWS and Google Cloud infrastructure it runs on.",
-    "I spent three years at Nex working on the body tracking behind Nex Playground, a game console you play by moving around. Everything had to run on the device itself, so a lot of my time went into making vision models smaller and faster, and into building the tools we used to test them. These days I do LLM training and evaluation work with Outlier and DataAnnotation, and in May 2026 I passed micro1's AI interview to become a certified AI/ML Engineer."
+    "Most of my work sits where machine learning meets real products. I'm at my best with real-time computer vision on small, low-power devices, where models have to be fast and reliable with no cloud to fall back on. I train and tune models in Python with TensorFlow and scikit-learn, and I'm just as comfortable building the React or Next.js app that puts a model in front of users, or the AWS and Google Cloud infrastructure it runs on.",
+    "At Nex, I worked on the body tracking behind Nex Playground, a game console you play by moving around. That meant training and optimizing lightweight vision models, writing the low-latency camera, sensor fusion, and inference code around them, and building the data pipelines and debugging tools we used to test and ship them.",
+    "Before Nex, I delivered 20+ full-stack and AI integration projects on Upwork and connected a company platform to its computer vision models. Today I do LLM training and evaluation work with Outlier and DataAnnotation, and in May 2026 I passed micro1's AI interview to become a certified AI/ML Engineer."
+  ],
+
+  "expertise": [
+    {
+      "title": "Computer vision",
+      "description": "Deep learning models for real-time object detection, tracking, and pose estimation, built with TensorFlow, OpenCV, and YOLO"
+    },
+    {
+      "title": "On-device ML",
+      "description": "Making models smaller and faster for low-power ARM hardware, plus the low-latency camera, sensor fusion, and inference code that runs them"
+    },
+    {
+      "title": "MLOps",
+      "description": "Data pipelines, training and evaluation workflows, CI/CD, deployment, and debugging tools that check accuracy in real-world conditions"
+    },
+    {
+      "title": "LLMs & NLP",
+      "description": "Prompt engineering, rubric-based evaluation, hallucination review, and LLM features in client products"
+    },
+    {
+      "title": "Full-stack",
+      "description": "React, Next.js, Flask, and Node.js apps and REST APIs on AWS and Google Cloud that put models in front of users"
+    },
+    {
+      "title": "Data",
+      "description": "ETL pipelines, NoSQL data stores, analytics, and client-facing dashboards"
+    }
   ],
 
   "experience": [
@@ -58,6 +93,7 @@
     {
       "role": "AI/ML Engineer",
       "company": "Nex",
+      "url": "https://www.nex.inc",
       "location": "Remote",
       "type": "Contract",
       "start": "2022-12",
@@ -106,8 +142,7 @@
       "end": "2019-08",
       "highlights": [
         "Built features for an influencer marketing platform, using PHP and Laravel on the back end and JavaScript and React on the front end.",
-        "Added tracking charts to influencer profiles and built dashboards that showed brand clients the ROI of their campaigns.",
-        "Took features from design through testing and release, fixed bugs, and met my own milestones and delivery deadlines."
+        "Added tracking charts to influencer profiles and built dashboards that showed brand clients the ROI of their campaigns."
       ],
       "tech": ["PHP", "Laravel", "JavaScript", "React"]
     }
@@ -127,7 +162,8 @@
     {
       "name": "GitHub Scraping & Analytics Tool",
       "description": "Desktop app that collects GitHub data through scraping and the GitHub API, then shows it in live, interactive dashboards.",
-      "tech": ["Python", "CustomTkinter", "GitHub API"]
+      "tech": ["Python", "CustomTkinter", "GitHub API"],
+      "links": [{ "label": "Code", "url": "https://github.com/ruijindev0801/Github_Scraper_2026" }]
     },
     {
       "name": "SaaS Landing Page",
@@ -180,8 +216,7 @@
       "end": "2020-01",
       "details": [
         "Graduated with honors, focusing on software development and AI",
-        "Thesis: AI-driven web applications",
-        "Member of the Computer Science Club"
+        "Thesis: AI-driven web applications"
       ]
     }
   ],
@@ -199,6 +234,7 @@
 
   "contact": {
     "heading": "Get in touch",
-    "message": "I'm looking for my next AI/ML role. Email is the quickest way to reach me, but WhatsApp works too."
+    "message": "I'm looking for my next AI/ML role. Email is the quickest way to reach me, but WhatsApp works too.",
+    "booking": { "label": "Book a call", "url": "https://calendly.com/ruijin-developer/ruijin" }
   }
 }

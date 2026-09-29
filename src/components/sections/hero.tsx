@@ -1,4 +1,5 @@
 import { BadgeCheck, FileText, Mail, MapPin } from "lucide-react";
+import { Metric } from "@/components/metric";
 import { SocialLinks } from "@/components/social-links";
 import { Typewriter } from "@/components/typewriter";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
@@ -94,6 +95,19 @@ export function Hero({ profile, social = [] }: { profile: Profile; social?: Link
         {social.length > 0 && <span aria-hidden="true" className="mx-2 hidden h-5 w-px bg-border sm:block" />}
         <SocialLinks links={social} />
       </div>
+
+      {profile.stats?.length ? (
+        <ul
+          aria-label="Highlights"
+          className={cn(enter, "mt-12 grid grid-cols-2 gap-x-6 gap-y-8 border-t pt-8 delay-480 sm:grid-cols-4")}
+        >
+          {profile.stats.map((stat) => (
+            <li key={stat.label}>
+              <Metric {...stat} size="lg" />
+            </li>
+          ))}
+        </ul>
+      ) : null}
     </section>
   );
 }

@@ -7,6 +7,7 @@ export const info: Info = data;
 
 export const SECTIONS = {
   about: { title: "About", nav: null },
+  expertise: { title: "What I work on", nav: null },
   experience: { title: "Experience", nav: "Experience" },
   projects: { title: "Projects", nav: "Projects" },
   publications: { title: "Publications", nav: "Publications" },

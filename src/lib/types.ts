@@ -31,6 +31,14 @@ export type Profile = {
   summary?: string;
   /** Resume PDF only (not shown on the site). */
   phone?: string;
+  /** Headline numbers under the intro, e.g. `{ "value": "7+", "label": "Years in ML" }`. The number counts up. */
+  stats?: Metric[];
+};
+
+/** A card in the "What I work on" section. Its icon is picked from the title (vision, device, MLOps, LLM, ...). */
+export type FocusArea = {
+  title: string;
+  description: string;
 };
 
 export type Experience = {
@@ -128,6 +136,7 @@ export type Info = {
   profile: Profile;
   social?: Link[];
   about?: string[];
+  expertise?: FocusArea[];
   experience?: Experience[];
   projects?: Project[];
   publications?: Publication[];
@@ -140,5 +149,7 @@ export type Info = {
     /** Heading of the closing call-to-action card. Defaults to "Get in touch". */
     heading?: string;
     message?: string;
+    /** Scheduling link (Calendly, Cal.com, ...) shown as a button next to the email. */
+    booking?: Link;
   };
 };

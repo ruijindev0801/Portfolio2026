@@ -7,6 +7,7 @@ import { Contact } from "@/components/sections/contact";
 import { CredentialList } from "@/components/sections/credentials";
 import { EducationList } from "@/components/sections/education";
 import { ExperienceList } from "@/components/sections/experience";
+import { Expertise } from "@/components/sections/expertise";
 import { Hero } from "@/components/sections/hero";
 import { ProjectList } from "@/components/sections/projects";
 import { PublicationList } from "@/components/sections/publications";
@@ -20,6 +21,8 @@ function SectionContent({ id }: { id: Exclude<SectionKey, "contact"> }) {
   switch (id) {
     case "about":
       return <About paragraphs={info.about ?? []} />;
+    case "expertise":
+      return <Expertise items={info.expertise ?? []} />;
     case "experience":
       return <ExperienceList items={info.experience ?? []} />;
     case "projects":
