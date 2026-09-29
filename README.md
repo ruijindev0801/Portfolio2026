@@ -156,3 +156,5 @@ Components land in `src/components/ui/` and are yours to edit. Four have local c
 - **Motion.** The hero entrance is pure CSS (tw-animate-css), so it plays from the first paint. Scroll reveals, the timeline, the header and number tickers use Motion.
 - **Print.** Printing the page (Ctrl/Cmd + P) produces a clean black-on-white resume without the header or buttons.
 - **Accessibility.** Semantic landmarks, a skip link, focus rings, labelled icon buttons, a screen-reader-friendly command palette, and reduced-motion support.
+
+## Contact: ruijin.developer@gmail.com
