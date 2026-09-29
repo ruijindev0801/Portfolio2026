@@ -57,12 +57,12 @@ export function Hero({ profile, social = [] }: { profile: Profile; social?: Link
             </ul>
           )}
         </div>
-        <div className={cn(enter, "zoom-in-95 delay-80")}>
+        {/* <div className={cn(enter, "zoom-in-95 delay-80")}>
           <Avatar className="size-20 shadow-sm sm:size-28">
             {profile.avatar && <AvatarImage src={profile.avatar} alt={profile.name} />}
             <AvatarFallback className="bg-card font-mono text-xl sm:text-2xl">{initials(profile.name)}</AvatarFallback>
           </Avatar>
-        </div>
+        </div> */}
       </div>
 
       <p
