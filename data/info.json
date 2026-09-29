@@ -32,7 +32,6 @@
   "social": [
     { "label": "GitHub", "url": "https://github.com/ruijindev0801" },
     { "label": "WhatsApp", "url": "https://wa.me/639312071477" },
-    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/ruijindev0801" },
     { "label": "Hugging Face", "url": "https://huggingface.co/ruijindev0801" },
     { "label": "Kaggle", "url": "https://www.kaggle.com/ruijindev0801" }
   ],
@@ -61,7 +60,7 @@
       "company": "Nex",
       "location": "Remote",
       "type": "Contract",
-      "start": "2022-03",
+      "start": "2022-12",
       "end": "2025-03",
       "summary": "Worked on the real-time body tracking inside Nex Playground, a camera-based game console you control by moving.",
       "highlights": [
@@ -90,7 +89,7 @@
       "location": "Remote",
       "type": "Part-time",
       "start": "2019-09",
-      "end": "2022-12",
+      "end": "2022-11",
       "highlights": [
         "Built, tested, and deployed front-end and back-end features for the company's platform using Java, Python, and Node.js.",
         "Used Python to connect the platform to the company's computer vision and machine learning models.",
