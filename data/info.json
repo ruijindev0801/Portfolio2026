@@ -51,6 +51,10 @@
 
   "expertise": [
     {
+      "title": "LLMs & NLP",
+      "description": "Prompt engineering, rubric-based evaluation, hallucination review, and LLM features in client products"
+    },
+    {
       "title": "Computer vision",
       "description": "Deep learning models for real-time object detection, tracking, and pose estimation, built with TensorFlow, OpenCV, and YOLO"
     },
@@ -61,10 +65,6 @@
     {
       "title": "MLOps",
       "description": "Data pipelines, training and evaluation workflows, CI/CD, deployment, and debugging tools that check accuracy in real-world conditions"
-    },
-    {
-      "title": "LLMs & NLP",
-      "description": "Prompt engineering, rubric-based evaluation, hallucination review, and LLM features in client products"
     },
     {
       "title": "Full-stack",
