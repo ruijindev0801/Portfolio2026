@@ -10,6 +10,9 @@ export type Link = {
   url: string;
 };
 
+/** A profile link. `hidden: true` keeps it in info.json but off the site and the resume. */
+export type SocialLink = Link & { hidden?: boolean };
+
 export type Profile = {
   name: string;
   /** Job title shown under your name, e.g. "Machine Learning Engineer". */
@@ -155,7 +158,7 @@ export type Settings = {
 export type Info = {
   settings: Settings;
   profile: Profile;
-  social?: Link[];
+  social?: SocialLink[];
   now?: Now;
   about?: string[];
   /** The live pose-tracking demo on the right of the intro (camera, runs in the browser). `description` is its caption. */

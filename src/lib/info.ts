@@ -3,7 +3,10 @@ import { normalizeThemePreference } from "./theme";
 import type { Info } from "./types";
 
 // Assigning the JSON to `Info` makes TypeScript validate data/info.json at build time.
-export const info: Info = data;
+const raw: Info = data;
+
+/** info.json with hidden profile links already removed, so no page has to filter them. */
+export const info: Info = { ...raw, social: raw.social?.filter((link) => !link.hidden) };
 
 export const SECTIONS = {
   now: { title: "What I'm doing now", nav: "Now" },

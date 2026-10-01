@@ -19,6 +19,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const info = JSON.parse(readFileSync(join(root, "data", "info.json"), "utf8"));
 const { profile, settings } = info;
+const social = (info.social ?? []).filter((l) => !l.hidden);
 
 // ---------- helpers ----------
 
@@ -51,8 +52,7 @@ const isMessaging = (url) => /wa\.me|whatsapp\.com/i.test(url);
 
 const contactLine = [
   profile.location && escapeHtml(profile.location),
-  profile.phone &&
-    `${escapeHtml(profile.phone)}${(info.social ?? []).some((l) => isMessaging(l.url)) ? " (WhatsApp)" : ""}`,
+  profile.phone && `${escapeHtml(profile.phone)}${social.some((l) => isMessaging(l.url)) ? " (WhatsApp)" : ""}`,
   profile.email && link(`mailto:${profile.email}`, profile.email),
 ].filter(Boolean);
 
@@ -60,7 +60,7 @@ const contactLine = [
 // on one row (the portfolio links to the rest). WhatsApp is covered by the phone number.
 const linkLine = [
   link(settings.siteUrl),
-  ...(info.social ?? [])
+  ...social
     .filter((l) => !isMessaging(l.url))
     .slice(0, 3)
     .map((l) => link(l.url)),

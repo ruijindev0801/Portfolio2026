@@ -35,9 +35,10 @@
 
   "social": [
     { "label": "GitHub", "url": "https://github.com/ruijindev0801" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/rui-jin-319400434" },
     { "label": "WhatsApp", "url": "https://wa.me/639312071477" },
-    { "label": "Hugging Face", "url": "https://huggingface.co/ruijindev0801" },
-    { "label": "Kaggle", "url": "https://www.kaggle.com/ruijindev0801" }
+    { "label": "Hugging Face", "url": "https://huggingface.co/ruijindev0801", "hidden": true },
+    { "label": "Kaggle", "url": "https://www.kaggle.com/ruijindev0801", "hidden": true }
   ],
 
   "now": {
