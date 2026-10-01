@@ -26,7 +26,7 @@
     "email": "ruijin.developer@gmail.com",
     "avatar": "",
     "status": "Open to lead AI/ML roles",
-    "bio": "Right now I help train and evaluate large language models on Outlier, AfterQuery, and Handshake AI, writing prompts and grading model answers against detailed rubrics. Over 7+ years I've built ML and full-stack software, from real-time computer vision on phones and drones to the apps around it.",
+    "bio": "Right now I help train and evaluate large language models on Outlier and AfterQuery, writing prompts and grading model answers against detailed rubrics. Over 7+ years I've built ML and full-stack software, from real-time computer vision on phones and drones to the apps around it.",
     "resume": "/Rui_Jin_Resume.pdf",
     "summary": "AI/ML engineer with 7+ years of experience building computer vision and machine learning systems, from real-time pose tracking on iOS and Android phones to the data pipelines, MLOps tooling, and full-stack web apps around them. Hands-on with Python, TensorFlow, OpenCV, YOLO, React, Next.js, AWS, and Google Cloud, and currently doing LLM training and evaluation work.",
     "phone": "+63 931 207 1477",
@@ -44,7 +44,7 @@
   "now": {
     "title": "AI training & LLM evaluation",
     "since": "2025-03",
-    "description": "I work on the human side of AI training. On Outlier, AfterQuery, and Handshake AI, platforms that AI companies use to train and evaluate their models, I write prompts, grade model answers, and help improve the data large language models learn from.",
+    "description": "I work on the human side of AI training. On Outlier and AfterQuery, platforms that AI companies use to train and evaluate their models, I write prompts, grade model answers, and help improve the data large language models learn from.",
     "points": [
       {
         "title": "Write prompts",
@@ -65,8 +65,7 @@
     ],
     "links": [
       { "label": "Outlier", "url": "https://outlier.ai" },
-      { "label": "AfterQuery", "url": "https://www.afterquery.com" },
-      { "label": "Handshake AI", "url": "https://joinhandshake.com/ai/" }
+      { "label": "AfterQuery", "url": "https://www.afterquery.com" }
     ]
   },
 
@@ -78,7 +77,7 @@
     "I started as a full-stack developer and moved into AI/ML because it's the fastest-growing part of software, and I wanted to build my career there. Most of my work now sits where machine learning meets real products. I train and tune models in Python with TensorFlow and scikit-learn, and I'm just as comfortable building the React or Next.js app that puts a model in front of users, or the AWS and Google Cloud setup it runs on.",
     "At Nex, I worked on real-time body tracking for motion games on iOS and Android phones. Tracking had to run at 30 frames per second on the phone itself, and two of the hardest problems were encoding high-quality video and keeping the network connection stable. I trained and optimized lightweight vision models and built the data pipelines and debugging tools we used to test and ship them.",
     "I also built a marine object detection system for a marine company: a YOLO26 model, stable enough to run on phones and drones, that spots kelp, plastic bottles, surfers, whales, boats, and containers. Before Nex, I delivered 20+ full-stack and AI integration projects on Upwork.",
-    "Today I do LLM training and evaluation work with Outlier, AfterQuery, and Handshake AI, and in May 2026 I passed micro1's AI interview to become a certified AI/ML Engineer. Next, I'm looking for a lead role on an AI-focused team where I can build for the next five years."
+    "Today I do LLM training and evaluation work with Outlier and AfterQuery, and in May 2026 I passed micro1's AI interview to become a certified AI/ML Engineer. Next, I'm looking for a lead role on an AI-focused team where I can build for the next five years."
   ],
 
   "expertise": [
@@ -111,12 +110,10 @@
   "experience": [
     {
       "role": "AI Training & Evaluation Specialist",
-      "company": "Outlier, AfterQuery & Handshake AI",
-      "location": "Remote",
-      "type": "Contract",
+      "company": "Outlier & AfterQuery",
       "start": "2025-03",
       "end": null,
-      "summary": "Help AI companies train and evaluate their large language models through three platforms: Outlier, AfterQuery, and Handshake AI.",
+      "summary": "Help AI companies train and evaluate their large language models through two platforms: Outlier and AfterQuery.",
       "highlights": [
         "Write and refine prompts for large language models (LLMs) across classification, summarization, code generation, and multi-step reasoning tasks, including hard prompts built to expose where models fail.",
         "Score and compare model responses side by side against detailed rubrics for accuracy, reasoning, and instruction following, and write a clear justification for each rating.",
@@ -130,8 +127,6 @@
       "role": "AI/ML Engineer",
       "company": "Nex",
       "url": "https://www.nex.inc",
-      "location": "Remote",
-      "type": "Contract",
       "start": "2022-12",
       "end": "2025-03",
       "summary": "Worked on real-time body tracking for Nex's motion games on iOS and Android phones.",
@@ -146,7 +141,6 @@
     {
       "role": "Freelance Software Developer",
       "company": "Upwork",
-      "location": "Remote",
       "start": "2021-06",
       "end": "2022-11",
       "highlights": [
@@ -159,8 +153,6 @@
     {
       "role": "Full-Stack Developer",
       "company": "Customized Limited",
-      "location": "Remote",
-      "type": "Part-time",
       "start": "2019-09",
       "end": "2022-11",
       "highlights": [
@@ -174,7 +166,6 @@
       "role": "Software Engineer Intern",
       "company": "Cloudbreakr",
       "location": "Hong Kong",
-      "type": "Internship",
       "start": "2018-06",
       "end": "2019-08",
       "highlights": [
