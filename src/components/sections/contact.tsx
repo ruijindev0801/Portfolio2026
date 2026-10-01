@@ -1,6 +1,5 @@
 import { CalendarDays, Mail } from "lucide-react";
 import { CopyEmailButton } from "@/components/copy-email-button";
-import { GridBackdrop } from "@/components/grid-backdrop";
 import { SocialLinks } from "@/components/social-links";
 import { Badge } from "@/components/ui/badge";
 import { BlurFade } from "@/components/ui/blur-fade";
@@ -14,12 +13,8 @@ export function Contact({ info }: { info: Info }) {
   return (
     <section id="contact" aria-labelledby="contact-title" className="pt-24 sm:pt-28">
       <BlurFade inView direction="up">
-        <div className="relative overflow-hidden rounded-2xl border bg-card px-6 py-14 text-center sm:px-12 sm:py-16">
-          <GridBackdrop
-            maxOpacity={0.15}
-            flickerChance={0.12}
-            className="[mask-image:radial-gradient(420px_circle_at_center,black,transparent)]"
-          />
+        {/* Slightly see-through, so the page's network background shows faintly behind the card. */}
+        <div className="relative overflow-hidden rounded-2xl border bg-card/75 px-6 py-14 text-center backdrop-blur-sm sm:px-12 sm:py-16">
           <div className="relative">
             <Badge variant="secondary">Contact</Badge>
             <h2 id="contact-title" className="mt-4 text-3xl font-semibold tracking-tighter text-balance sm:text-4xl">

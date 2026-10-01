@@ -6,6 +6,7 @@ import type { Info } from "./types";
 export const info: Info = data;
 
 export const SECTIONS = {
+  now: { title: "What I'm doing now", nav: "Now" },
   about: { title: "About", nav: null },
   expertise: { title: "What I work on", nav: null },
   experience: { title: "Experience", nav: "Experience" },
@@ -16,6 +17,7 @@ export const SECTIONS = {
   education: { title: "Education", nav: null },
   certifications: { title: "Certifications", nav: null },
   awards: { title: "Awards", nav: null },
+  fun: { title: "Fun facts", nav: null },
   contact: { title: "Contact", nav: "Contact" },
 } as const;
 
@@ -31,6 +33,8 @@ function hasContent(key: SectionKey): boolean {
   if (key === "contact") {
     return Boolean(info.profile.email || info.contact?.message || info.social?.length);
   }
+  if (key === "now") return Boolean(info.now);
+  if (key === "fun") return Boolean(info.funFacts?.facts?.length || info.funFacts?.quotes?.length);
   const value = info[key];
   return Array.isArray(value) && value.length > 0;
 }

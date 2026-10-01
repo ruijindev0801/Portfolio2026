@@ -31,14 +31,33 @@ export type Profile = {
   summary?: string;
   /** Resume PDF only (not shown on the site). */
   phone?: string;
-  /** Headline numbers under the intro, e.g. `{ "value": "7+", "label": "Years in ML" }`. The number counts up. */
-  stats?: Metric[];
+  /** The tools you're best known for, shown with their logos in the intro's profile card. */
+  mainTech?: string[];
 };
 
 /** A card in the "What I work on" section. Its icon is picked from the title (vision, device, MLOps, LLM, ...). */
 export type FocusArea = {
   title: string;
   description: string;
+};
+
+/** The "What I'm doing now" section, and the "Now" line of the intro's profile card. */
+export type Now = {
+  /** Short, e.g. "AI training & LLM evaluation". */
+  title: string;
+  description: string;
+  /** "YYYY-MM", shown as "Since Mar 2025". */
+  since?: string;
+  /** The steps of the work. Each icon is picked from its title (write, grade, data, ...). */
+  points?: { title: string; text: string }[];
+  /** Where the work happens, e.g. the platforms. */
+  links?: Link[];
+};
+
+/** "Fun facts": a few personal notes and favorite quotes. Icons come from the title (coffee, book, ...). */
+export type FunFacts = {
+  facts?: { title: string; text: string }[];
+  quotes?: { text: string; author?: string }[];
 };
 
 export type Experience = {
@@ -68,6 +87,8 @@ export type Project = {
   name: string;
   description: string;
   year?: string | number;
+  /** Short tag shown on the card, e.g. "Client work · NDA" for projects that can't be linked. */
+  note?: string;
   /** Where the project title links to. Falls back to the first entry in `links`. */
   url?: string;
   metrics?: Metric[];
@@ -135,7 +156,11 @@ export type Info = {
   settings: Settings;
   profile: Profile;
   social?: Link[];
+  now?: Now;
   about?: string[];
+  /** The live pose-tracking demo on the right of the intro (camera, runs in the browser). `description` is its caption. */
+  demo?: { description: string };
+  funFacts?: FunFacts;
   expertise?: FocusArea[];
   experience?: Experience[];
   projects?: Project[];

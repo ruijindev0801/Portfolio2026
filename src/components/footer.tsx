@@ -8,7 +8,7 @@ const builtAt = new Date();
 export function Footer({ name }: { name: string }) {
   const updated = builtAt.toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
   return (
-    <footer className="mx-auto mt-24 max-w-3xl px-6 pb-10">
+    <footer className="mx-auto mt-24 max-w-6xl px-6 pb-10 lg:px-8">
       <Separator />
       <div className="flex flex-col items-center justify-between gap-3 pt-6 text-xs text-muted-foreground sm:flex-row">
         <p>

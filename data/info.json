@@ -1,8 +1,9 @@
 {
   "settings": {
-    "siteUrl": "https://ruijin-dev.vercel.app",
+    "siteUrl": "https://ruijin-ai-dev.vercel.app",
     "defaultTheme": "system",
     "sections": [
+      "now",
       "about",
       "expertise",
       "experience",
@@ -13,6 +14,7 @@
       "education",
       "certifications",
       "awards",
+      "fun",
       "contact"
     ]
   },
@@ -23,17 +25,12 @@
     "location": "Surigao del Norte, Philippines",
     "email": "ruijin.developer@gmail.com",
     "avatar": "",
-    "status": "Open to AI/ML roles",
-    "bio": "I build machine learning systems that run in real time on low-power hardware, along with the data pipelines, evaluation tools, and apps around them. I've spent 7+ years shipping ML and full-stack software, most of it remotely with US-based teams.",
+    "status": "Open to lead AI/ML roles",
+    "bio": "Right now I help train and evaluate large language models on Outlier, AfterQuery, and Handshake AI, writing prompts and grading model answers against detailed rubrics. Over 7+ years I've built ML and full-stack software, from real-time computer vision on phones and drones to the apps around it.",
     "resume": "/Rui_Jin_Resume.pdf",
-    "summary": "AI/ML engineer with 7+ years of experience building computer vision and machine learning systems, from real-time pose tracking on low-power edge devices to the data pipelines, MLOps tooling, and full-stack web apps around them. Hands-on with Python, TensorFlow, OpenCV, YOLO, React, Next.js, AWS, and Google Cloud, and currently doing LLM training and evaluation work.",
+    "summary": "AI/ML engineer with 7+ years of experience building computer vision and machine learning systems, from real-time pose tracking on iOS and Android phones to the data pipelines, MLOps tooling, and full-stack web apps around them. Hands-on with Python, TensorFlow, OpenCV, YOLO, React, Next.js, AWS, and Google Cloud, and currently doing LLM training and evaluation work.",
     "phone": "+63 931 207 1477",
-    "stats": [
-      { "value": "7+", "label": "Years shipping ML and software" },
-      { "value": "20+", "label": "Client projects on Upwork" },
-      { "value": "5-star", "label": "Upwork client rating" },
-      { "value": "100%", "label": "On-device inference at Nex" }
-    ]
+    "mainTech": ["Python", "TensorFlow", "OpenCV", "YOLO", "LLMs", "React", "Next.js", "AWS", "Google Cloud"]
   },
 
   "social": [
@@ -43,20 +40,54 @@
     { "label": "Kaggle", "url": "https://www.kaggle.com/ruijindev0801" }
   ],
 
+  "now": {
+    "title": "AI training & LLM evaluation",
+    "since": "2025-03",
+    "description": "I work on the human side of AI training. On Outlier, AfterQuery, and Handshake AI, platforms that AI companies use to train and evaluate their models, I write prompts, grade model answers, and help improve the data large language models learn from.",
+    "points": [
+      {
+        "title": "Write prompts",
+        "text": "Write and refine prompts across classification, summarization, code generation, and multi-step reasoning, including hard ones built to expose where models fail."
+      },
+      {
+        "title": "Grade responses",
+        "text": "Score and compare responses against detailed rubrics for accuracy, reasoning, and instruction following, with a justification for every rating."
+      },
+      {
+        "title": "Fix hallucinations",
+        "text": "Flag hallucinations and factual errors, and rewrite weak answers into clear, correct references."
+      },
+      {
+        "title": "Review code",
+        "text": "Check generated code for correctness and readability, using 7+ years of engineering experience."
+      }
+    ],
+    "links": [
+      { "label": "Outlier", "url": "https://outlier.ai" },
+      { "label": "AfterQuery", "url": "https://www.afterquery.com" },
+      { "label": "Handshake AI", "url": "https://joinhandshake.com/ai/" }
+    ]
+  },
+
+  "demo": {
+    "description": "A small version of what I worked on at Nex: body tracking that runs in real time on the device itself, with no server. Turn on your camera and Google's MediaPipe pose model (lite) tracks 33 body points right in your browser."
+  },
+
   "about": [
-    "Most of my work sits where machine learning meets real products. I'm at my best with real-time computer vision on small, low-power devices, where models have to be fast and reliable with no cloud to fall back on. I train and tune models in Python with TensorFlow and scikit-learn, and I'm just as comfortable building the React or Next.js app that puts a model in front of users, or the AWS and Google Cloud infrastructure it runs on.",
-    "At Nex, I worked on the body tracking behind Nex Playground, a game console you play by moving around. That meant training and optimizing lightweight vision models, writing the low-latency camera, sensor fusion, and inference code around them, and building the data pipelines and debugging tools we used to test and ship them.",
-    "Before Nex, I delivered 20+ full-stack and AI integration projects on Upwork and connected a company platform to its computer vision models. Today I do LLM training and evaluation work with Outlier and DataAnnotation, and in May 2026 I passed micro1's AI interview to become a certified AI/ML Engineer."
+    "I started as a full-stack developer and moved into AI/ML because it's the fastest-growing part of software, and I wanted to build my career there. Most of my work now sits where machine learning meets real products. I train and tune models in Python with TensorFlow and scikit-learn, and I'm just as comfortable building the React or Next.js app that puts a model in front of users, or the AWS and Google Cloud setup it runs on.",
+    "At Nex, I worked on real-time body tracking for motion games on iOS and Android phones. Tracking had to run at 30 frames per second on the phone itself, and two of the hardest problems were encoding high-quality video and keeping the network connection stable. I trained and optimized lightweight vision models and built the data pipelines and debugging tools we used to test and ship them.",
+    "I also built a marine object detection system for a marine company: a YOLO26 model, stable enough to run on phones and drones, that spots kelp, plastic bottles, surfers, whales, boats, and containers. Before Nex, I delivered 20+ full-stack and AI integration projects on Upwork.",
+    "Today I do LLM training and evaluation work with Outlier, AfterQuery, and Handshake AI, and in May 2026 I passed micro1's AI interview to become a certified AI/ML Engineer. Next, I'm looking for a lead role on an AI-focused team where I can build for the next five years."
   ],
 
   "expertise": [
     {
       "title": "Computer vision",
-      "description": "Deep learning models for real-time object detection, tracking, and pose estimation, built with TensorFlow, OpenCV, and YOLO"
+      "description": "Deep learning models for real-time object detection, tracking, and pose estimation, from body tracking on phones to marine detection on drones with YOLO26"
     },
     {
       "title": "On-device ML",
-      "description": "Making models smaller and faster for low-power ARM hardware, plus the low-latency camera, sensor fusion, and inference code that runs them"
+      "description": "Making models smaller and faster so real-time tracking runs at 30 fps on iOS and Android phones, plus the camera, video encoding, and inference code around them"
     },
     {
       "title": "MLOps",
@@ -78,17 +109,21 @@
 
   "experience": [
     {
-      "role": "Prompt Engineer",
-      "company": "Outlier & DataAnnotation",
+      "role": "AI Training & Evaluation Specialist",
+      "company": "Outlier, AfterQuery & Handshake AI",
       "location": "Remote",
       "type": "Contract",
       "start": "2025-03",
       "end": null,
+      "summary": "Help AI companies train and evaluate their large language models through three platforms: Outlier, AfterQuery, and Handshake AI.",
       "highlights": [
-        "Write and refine prompts for large language models (LLMs) across classification, summarization, code generation, and multi-step reasoning tasks.",
-        "Score and compare model responses against detailed rubrics, flag hallucinations, and help improve the quality of LLM training data."
+        "Write and refine prompts for large language models (LLMs) across classification, summarization, code generation, and multi-step reasoning tasks, including hard prompts built to expose where models fail.",
+        "Score and compare model responses side by side against detailed rubrics for accuracy, reasoning, and instruction following, and write a clear justification for each rating.",
+        "Flag hallucinations and factual errors, and rewrite weak answers into clear, correct reference responses.",
+        "Review generated code for correctness and readability, drawing on 7+ years of software and ML engineering.",
+        "Help raise the quality of the data that LLMs are trained and evaluated on."
       ],
-      "tech": ["LLMs", "Prompt engineering", "LLM evaluation"]
+      "tech": ["LLMs", "Prompt engineering", "LLM evaluation", "RLHF", "Code review"]
     },
     {
       "role": "AI/ML Engineer",
@@ -98,9 +133,10 @@
       "type": "Contract",
       "start": "2022-12",
       "end": "2025-03",
-      "summary": "Worked on the real-time body tracking inside Nex Playground, a camera-based game console you control by moving.",
+      "summary": "Worked on real-time body tracking for Nex's motion games on iOS and Android phones.",
       "highlights": [
-        "Built and optimized lightweight computer vision models for real-time pose and gesture tracking on low-power ARM devices, with all inference running on-device instead of in the cloud.",
+        "Built and optimized lightweight computer vision models for real-time pose and gesture tracking on iOS and Android phones, targeting 30 fps with all inference running on-device.",
+        "Worked on two of the hardest parts of the pipeline: encoding high-quality video on the phone and keeping the network connection stable.",
         "Wrote low-latency code for camera input, sensor fusion, and model inference, and connected it to the SDK our game designers and outside Unity developers used to build motion-controlled games.",
         "Set up data pipelines and MLOps tooling to train, evaluate, and deploy models, plus debugging tools to check tracking accuracy across different lighting and room setups."
       ],
@@ -150,13 +186,15 @@
 
   "projects": [
     {
-      "name": "Shark Detection from Drone Footage",
-      "description": "Spots and tracks sharks in drone video in real time, using a YOLO object detection model and OpenCV.",
-      "tech": ["Python", "TensorFlow", "OpenCV", "YOLO", "Drone SDK"]
+      "name": "Marine Object Detection",
+      "description": "Real-time detection of marine objects for a marine company: kelp, plastic bottles, surfers, whales, boats, and containers. Built on YOLO26 as a stable model that runs on phones and drones.",
+      "note": "Client work · NDA",
+      "tech": ["Python", "YOLO26", "TensorFlow", "OpenCV", "Drone SDK"]
     },
     {
-      "name": "Instagram Photo Protection",
-      "description": "Uses image recognition and watermarking to catch and prevent unauthorized use of photos posted on Instagram.",
+      "name": "Instagram Avatar Protection",
+      "description": "Uses image recognition and watermarking to catch and prevent unauthorized reuse of users' Instagram profile photos.",
+      "note": "Client work · NDA",
       "tech": ["Python", "TensorFlow", "OpenCV", "Instagram API"]
     },
     {
@@ -232,9 +270,30 @@
 
   "awards": [],
 
+  "funFacts": {
+    "facts": [
+      { "title": "Powered by espresso", "text": "My models run on GPUs. I run on espresso." },
+      {
+        "title": "Still waiting for my Hogwarts letter",
+        "text": "Harry Potter is my favorite book. Until the owl shows up, I'll keep casting spells in Python."
+      },
+      {
+        "title": "Certified comedy addict",
+        "text": "Zootopia, Ne Zha, and Despicable Me are my all-time favorite comedies. The Minions get me every single time."
+      }
+    ],
+    "quotes": [
+      {
+        "text": "I am the master of my fate, I am the captain of my soul.",
+        "author": "William Ernest Henley, Invictus"
+      },
+      { "text": "Stay hungry, stay foolish.", "author": "Steve Jobs" }
+    ]
+  },
+
   "contact": {
     "heading": "Get in touch",
-    "message": "I'm looking for my next AI/ML role. Email is the quickest way to reach me, but WhatsApp works too.",
-    "booking": { "label": "Book a call", "url": "https://calendly.com/ruijin-developer/ruijin" }
+    "message": "I'm looking for a lead role on an AI-focused team. Email is the quickest way to reach me, but WhatsApp works too.",
+    "booking": { "label": "Book a call", "url": "https://cal.com/rui-jin/short-call" }
   }
 }

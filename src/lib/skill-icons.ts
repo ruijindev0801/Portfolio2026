@@ -1,4 +1,4 @@
-import { Database } from "lucide-react";
+import { BrainCircuit, Database } from "lucide-react";
 import { FaAws, FaJava } from "react-icons/fa6";
 import {
   SiAnthropic,
@@ -74,6 +74,7 @@ const SKILLS: [RegExp, Icon][] = [
   [/^rust$/i, SiRust],
   [/^c#$/i, TbBrandCSharp],
   [/^(sql|nosql)$/i, Database],
+  [/^llms?\b/i, BrainCircuit],
   [/pytorch/i, SiPytorch],
   [/tensorflow/i, SiTensorflow],
   [/keras/i, SiKeras],

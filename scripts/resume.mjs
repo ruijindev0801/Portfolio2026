@@ -91,9 +91,11 @@ const experience = (info.experience ?? [])
 const projects = (info.projects ?? [])
   .map((project) => {
     const url = project.url ?? project.links?.[0]?.url;
+    // Right column: the link, or the note (e.g. "Client work · NDA") when there's nothing to link.
+    const aside = url ? link(absolute(url)) : project.note ? escapeHtml(project.note) : "";
     return `
     <div class="entry">
-      <div class="row"><span><b>${escapeHtml(project.name)}</b>${project.tech?.length ? ` | ${escapeHtml(project.tech.join(", "))}` : ""}</span>${url ? `<span class="dates">${link(absolute(url))}</span>` : ""}</div>
+      <div class="row"><span><b>${escapeHtml(project.name)}</b>${project.tech?.length ? ` | ${escapeHtml(project.tech.join(", "))}` : ""}</span>${aside ? `<span class="dates">${aside}</span>` : ""}</div>
       <p>${escapeHtml(project.description)}</p>
     </div>`;
   })

@@ -2,6 +2,7 @@ import { Bullets, TechTags, TextLink } from "@/components/entry";
 import { LinkButtons } from "@/components/link-buttons";
 import { Metric } from "@/components/metric";
 import { SpotlightCard } from "@/components/spotlight-card";
+import { Badge } from "@/components/ui/badge";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import type { Project } from "@/lib/types";
@@ -35,6 +36,11 @@ export function ProjectList({ items }: { items: Project[] }) {
                     </span>
                   )}
                 </div>
+                {project.note && (
+                  <Badge variant="outline" className="w-fit rounded-md font-normal text-muted-foreground">
+                    {project.note}
+                  </Badge>
+                )}
                 <CardDescription className="text-pretty">{project.description}</CardDescription>
               </CardHeader>
 

@@ -123,6 +123,22 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
+  /* Steam over the coffee icon (fun-facts.tsx) */
+  --animate-steam: steam 2.4s ease-out infinite;
+  @keyframes steam {
+    0% {
+      opacity: 0;
+      transform: translateY(2px) scaleY(0.6);
+    }
+    35% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-9px) scaleY(1.2);
+    }
+  }
+
   /* Typewriter caret (typewriter.tsx) */
   --animate-caret-blink: caret-blink 1.1s ease-out infinite;
   @keyframes caret-blink {

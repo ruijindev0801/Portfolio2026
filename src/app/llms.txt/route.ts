@@ -12,6 +12,20 @@ const joinLinks = (links?: Link[]) => (links?.length ? ` (${links.map((l) => lin
 
 function section(key: SectionKey): string[] {
   switch (key) {
+    case "now":
+      return info.now
+        ? [
+            `**${info.now.title}**${info.now.since ? ` (since ${formatDate(info.now.since)})` : ""}${joinLinks(info.now.links)}`,
+            "",
+            info.now.description,
+            ...(info.now.points ?? []).map((point) => `- ${point.title}: ${point.text}`),
+          ]
+        : [];
+    case "fun":
+      return [
+        ...(info.funFacts?.facts ?? []).map((fact) => `- ${fact.title}: ${fact.text}`),
+        ...(info.funFacts?.quotes ?? []).map((quote) => `- "${quote.text}"${quote.author ? ` (${quote.author})` : ""}`),
+      ];
     case "about":
       return (info.about ?? []).flatMap((paragraph, i) => (i ? ["", paragraph] : [paragraph]));
     case "expertise":
@@ -25,7 +39,7 @@ function section(key: SectionKey): string[] {
     case "projects":
       return (info.projects ?? []).map((project) => {
         const results = project.metrics?.map((m) => `${m.value} ${m.label}`).join("; ");
-        return `- **${link(project.name, project.url ?? project.links?.[0]?.url)}**: ${project.description}${results ? ` Results: ${results}.` : ""}`;
+        return `- **${link(project.name, project.url ?? project.links?.[0]?.url)}**${project.note ? ` (${project.note})` : ""}: ${project.description}${results ? ` Results: ${results}.` : ""}`;
       });
     case "publications":
       return (info.publications ?? []).map(
@@ -67,6 +81,7 @@ export function GET() {
     "",
     `> ${facts.join(" · ")}. ${profile.bio}`,
     "",
+    ...(info.demo ? [`Live demo on the site: ${info.demo.description}`, ""] : []),
     ...(profile.resume ? [`Resume: ${new URL(profile.resume, info.settings.siteUrl).href}`, ""] : []),
     ...sections.flatMap((key) => [`## ${SECTIONS[key].title}`, "", ...section(key), ""]),
   ];

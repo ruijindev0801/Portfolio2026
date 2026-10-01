@@ -43,7 +43,7 @@ export function Header({ name, headline, initials, avatar, nav, sections, links,
         scrolled ? "border-border bg-background/75 backdrop-blur-xl" : "border-transparent",
       )}
     >
-      <div className="mx-auto flex h-14 max-w-3xl items-center justify-between gap-4 px-6">
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-6 lg:px-8">
         <a href="#top" aria-label={`${name}, back to top`} className="flex min-w-0 items-center gap-2.5 rounded-md">
           <Avatar className="size-7">
             {avatar && <AvatarImage src={avatar} alt="" />}
