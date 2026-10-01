@@ -8,12 +8,13 @@ The main thing here is a live pose-tracking demo that runs in the visitor's brow
 
 Code: [`src/components/sections/pose-demo.tsx`](src/components/sections/pose-demo.tsx)
 
-- **Model:** MediaPipe Pose Landmarker (lite, float16, 33 body points), served from this site (`public/models`) rather than Google's storage, which can be slow or blocked. Nothing is downloaded until someone presses "Turn on camera", and the model is fetched once even if the GPU attempt fails and the CPU takes over. A stalled load gives up after 45 seconds with a "try again" message instead of spinning forever.
+- **Model and engine:** MediaPipe Pose Landmarker (lite, float16, 33 body points). The model lives in `public/models`, and the WebAssembly engine is referenced from the npm package, so the build serves it from this site in exactly the installed version. No third-party CDN, and no version to keep in sync by hand. Nothing is downloaded until someone presses "Turn on camera". Each file is fetched once, with progress shown on the button, and a download only gives up if it stops making progress for 20 seconds, so slow connections still get there.
 - **Privacy:** frames go from the `<video>` element straight into the model. No video leaves the device.
-- **GPU first, CPU fallback:** it starts on the GPU (WebGL) and falls back to the CPU (WASM with XNNPACK). Some GPUs and software renderers hang instead of throwing, so the GPU gets an 8-second deadline. A GPU instance that shows up after the deadline is closed.
+- **GPU first, CPU fallback:** it starts on the GPU (WebGL) and falls back to the CPU (WASM with XNNPACK). Some GPUs and software renderers hang instead of throwing, so the GPU gets an 8-second deadline. The engine is already in memory by then, so the deadline measures startup only, never download time. A GPU instance that shows up after the deadline is closed.
 - **Frame pacing:** the model only runs when the camera has produced a new frame, not on every animation frame.
 - **Honest numbers:** the fps / ms readout skips the first 10 frames, because they include one-time warm-up (shader compile, allocation) and would make the averages look worse than they are.
 - **Drawing:** the skeleton is drawn on a 2D canvas in the video's pixel space and mirrored with CSS, like a selfie camera. Face points are skipped because they blur into a blob at this size.
+- **Failure handling:** a blocked camera, a missing camera, a camera busy in another app, and a camera that disconnects mid-run each get their own message and a "Try again" button. MediaPipe's routine startup logs go to `console.debug`, so the console stays clean.
 
 ## Stack
 
